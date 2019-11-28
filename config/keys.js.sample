@@ -1,0 +1,4 @@
+module.exports = {
+    MongoURI: 'connection string for your mongo db goes here',
+    ExpressSessionSecret: 'Secret String for Express Session goes here'
+}

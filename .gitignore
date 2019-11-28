@@ -1,3 +1,7 @@
+# Keys file
+config/keys.js
+
+
 # Logs
 logs
 *.log
