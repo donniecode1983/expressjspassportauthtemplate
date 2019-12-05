@@ -33,17 +33,17 @@ router.post('/register', (req, res) => {
 
     // Check Required Fields
     if (!name || !email || !password || !password2) {
-        errors.push({ message: 'Please fill in all fieds' });
+        errors.push({ message: require('../config/messages').register.alert_fill_all_fields });
     }
 
     //Check that passwords match
     if (password !== password2) {
-        errors.push({ message: 'Passwords do not match' })
+        errors.push({ message: require('../config/messages').register.alert_passwords_dont_match });
     }
 
     // Check Password Length
     if (password.length < 6) {
-        errors.push({ message: 'Password must be at least 6 characters' });
+        errors.push({ message: require('../config/messages').register.alert_passwords_dont_match});
     }
 
     if (errors.length > 0) {
@@ -60,7 +60,7 @@ router.post('/register', (req, res) => {
         .then(user => {
             if(user) {
                 // User Exists
-                errors.push({message: 'Email is already registered'});
+                errors.push({message: require('../config/messages').register.alert_email_already_taken});
                 res.render('register', {
                     errors,
                     name,
@@ -84,7 +84,7 @@ router.post('/register', (req, res) => {
                         // Save the new user
                         newUser.save()
                         .then(user => {
-                            req.flash('success_msg', 'You are now registered');
+                            req.flash('success_msg', require('../config/messages').register.success_msg);
                             res.redirect('/users/login');
                         })
                         .catch(err => console.log(err));
