@@ -1,7 +1,8 @@
 {
   "name": "expressauth",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a description",
+  "repository": "https://repourlhere",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
@@ -24,5 +25,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.3"
   }
 }
