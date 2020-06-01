@@ -15,8 +15,15 @@ router.get('/', (req, res) => {
 router.get('/dashboard', ensureAuthenticated, (req, res) => {
     // res.send('Welcome to the world!')
     res.render('dashboard', {
-        name: req.user.name
+        name: req.user.name,
+        email: req.user.email
     });
+});
+
+// Test Page
+router.get('/test',  (req, res) => {
+    // res.send('Welcome to the world!')
+    res.render('test');
 });
 
 
