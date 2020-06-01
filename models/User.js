@@ -16,6 +16,9 @@
     date: {
         type: Date,
         default: Date.now
+    },
+    last_name: {
+        type: String
     }
  });
 
